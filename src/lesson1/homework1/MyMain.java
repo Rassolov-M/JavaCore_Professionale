@@ -7,8 +7,9 @@ import java.util.List;
 public class MyMain {
     public static void main(String[] args) {
 
-        taskOne();
-        taskTwo();
+//        taskOne();
+//        taskTwo();
+        taskThree();
 
     }
 
@@ -43,7 +44,15 @@ public class MyMain {
 
 
     public static void taskThree() {
-
+        Box<Apple> boxWithApple = new Box<>(new Apple(), new Apple(), new Apple());
+        Box<Orange> boxWithOranges = new Box<>(new Orange(), new Orange());
+        Box<Orange> anotherBoxWithOranges = new Box<>();
+        System.out.println("Корзина яблок " + boxWithApple.getWeight());
+        System.out.println("Корзина апельсинов  " + boxWithOranges.getWeight());
+        System.out.println(boxWithApple.compare(boxWithOranges));
+        boxWithOranges.replaceFruitsToAnotherBox(anotherBoxWithOranges);
+        System.out.println(boxWithOranges.getBox().toString());
+        System.out.println(anotherBoxWithOranges.getBox().toString());
     }
 
 }
